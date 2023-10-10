@@ -1,0 +1,45 @@
+---
+import type { Team } from '~/types';
+
+import WidgetWrapper from '../ui/WidgetWrapper.astro';
+import Headline from '../ui/Headline.astro';
+import Image from '~/components/common/Image.astro';
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  members = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Team;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+
+  <div class="flex flex-wrap justify-center -m-4 text-center">
+    {
+      members &&
+        members.map(({name, role, image}) => (
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full min-w-[220px] text-center">
+          <Image
+            class="mx-auto rounded-md w-full mb-3"
+            widths={[400, 768, 1024, 2040]}
+            sizes="(max-width: 767px) 400px, (max-width: 1023px) 768px, (max-width: 2039px) 1024px, 2040px"
+            loading="eager"
+            width={320}
+            height={320}
+            {...image}
+          />
+
+          <div class="text-lg font-bold">{name}</div>
+          <p class="text-muted mt-2">{role}</p> 
+          </div>
+        ))
+    }
+  </div>
+</WidgetWrapper>

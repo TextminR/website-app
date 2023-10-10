@@ -1,6 +1,8 @@
 import type { AstroComponentFactory } from 'astro/runtime/server/index.js';
 import type { HTMLAttributes } from 'astro/types';
 
+/* **** Predefined types **** */
+
 export interface Post {
   /** A unique ID number that identifies a post. */
   id: string;
@@ -107,15 +109,6 @@ export interface Headline {
   classes?: Record<string, string>;
 }
 
-interface TeamMember {
-  name?: string;
-  job?: string;
-  image?: Image;
-  socials?: Array<Social>;
-  description?: string;
-  classes?: Record<string, string>;
-}
-
 interface Social {
   icon?: string;
   href?: string;
@@ -214,10 +207,6 @@ export interface Hero extends Headline, Widget {
   isReversed?: boolean;
 }
 
-export interface Team extends Headline, Widget {
-  team?: Array<TeamMember>;
-}
-
 export interface Stats extends Headline, Widget {
   stats?: Array<Stat>;
 }
@@ -279,3 +268,27 @@ export interface Content extends Headline, Widget {
 }
 
 export interface Contact extends Headline, Form, Widget {}
+
+/* **** Custom types **** */
+
+interface TeamMember {
+  name?: string;
+  role?: string;
+  image?: Image;
+}
+
+export interface Team extends Headline, Widget {
+  members?: Array<TeamMember>;
+}
+
+interface Milestone {
+  title?: string;
+  description?: string;
+  deadline?: Date;
+  active: boolean
+  icon?: string;
+}
+
+export interface Milestones extends Headline, Widget {
+  milestones?: Array<Milestone>
+}
