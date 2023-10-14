@@ -4,7 +4,7 @@ export const headerData = {
   position: 'left',
   links: [
     {
-      text: 'Project updates',
+      text: 'Project Updates',
       href: getBlogPermalink(),
     },
   ],
