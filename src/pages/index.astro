@@ -6,6 +6,7 @@ import Team from '~/components/widgets/Team.astro';
 import Project from '~/components/widgets/Project.astro';
 import MainFeatures from '~/components/widgets/MainFeatures.astro';
 import Milestones from '~/components/widgets/Milestones.astro';
+import Link from '~/components/ui/Link.astro'
 
 import { SITE } from '~/utils/config';
 import { getBlogPermalink } from '~/utils/permalinks';
@@ -20,12 +21,13 @@ const metadata = {
   <!-- Hero ******************* -->
 
   <Hero
-    tagline="AI diploma project"
+    tagline="Diploma Project powered by AI"
     actions={[
       {
         variant: 'primary',
-        text: 'Open shiny app',
-        href: '#',
+        text: 'Open prototype',
+        href: 'https://dlengsteiner.shinyapps.io/tm-prototype/',
+        target: '_blank',
         icon: 'tabler:external-link',
       },
       { text: 'View Project Updates', href: getBlogPermalink() },
@@ -36,7 +38,7 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+      Charting the future of AI-powered Topic Analysis and Text Visualisation.
     </Fragment>
   </Hero>
 
@@ -45,8 +47,13 @@ const metadata = {
   <Project
     id="about"
     title="About this project"
-    subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
   >
+    <Fragment slot="subtitle">
+      Our goal is to create a tool that allows users to easily analyze large amounts of text data
+      from the <Link href="https://textminr-backend.netlify.app/" target="_blank">Backend</Link>, extract topics from it and visualize the results.
+      By integrating the latest machine learning models, it will be possible to label the extracted topics and view their distribution over time.
+    </Fragment>
+
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
@@ -64,7 +71,6 @@ const metadata = {
 
   <MainFeatures
     title="Main features"
-    subtitle="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."
     items={features}
   >
     <Fragment slot="bg">
