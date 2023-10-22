@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const {
+  id = '',
+  href,
+  text = Astro.slots.render("default"),
+  target,
+  icon
+} = Astro.props;
+---
+
+<a id={id} class="text-blue-600 underline dark:text-blue-500 hover:no-underline" {...target ? { target: target, rel: 'noopener noreferrer' } : {}} href={href}>
+  <Fragment set:html={text} />
+  {icon && <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" />}
+</a>
