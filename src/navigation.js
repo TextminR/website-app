@@ -7,6 +7,10 @@ export const headerData = {
       text: 'Project Updates',
       href: getBlogPermalink(),
     },
+    {
+      text: 'Backend',
+      href: 'https://textminr-backend.netlify.app/',
+    }
   ],
   actions: [],
 };
