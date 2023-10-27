@@ -274,6 +274,7 @@ export interface Contact extends Headline, Form, Widget {}
 interface TeamMember {
   name?: string;
   role?: string;
+  email?: string;
   image?: Image;
 }
 
