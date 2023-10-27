@@ -5,7 +5,7 @@ site:
   trailingSlash: false
 
 i18n:
-  language: de
+  language: en
   textDirection: ltr
 
 apps:
