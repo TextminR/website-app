@@ -51,7 +51,7 @@ export const milestones = [
     title: 'Trained machine learning models',
     description: "By this stage, we will have trained at least one machine learning model to be used for topic extraction.",
     deadline: new Date('2023-11-30'),
-    active: false,
+    active: true,
     icon: 'tabler:robot',
   },
   {
