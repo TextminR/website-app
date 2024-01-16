@@ -58,14 +58,14 @@ export const milestones = [
     title: 'Deployed user interface & visualizations',
     description: "We will have deployed a minimal user interface as a web app to visualize the results of the topic extraction.",
     deadline: new Date('2024-01-10'),
-    active: false,
+    active: true,
     icon: 'tabler:app-window',
   },
   {
     title: "Researched legal situation",
     description: "We will have researched the legal situation regarding the use of the tool and the output it produces.",
     deadline: new Date('2024-01-15'),
-    active: false,
+    active: true,
     icon: 'tabler:gavel',
   },
   {
