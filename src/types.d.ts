@@ -286,7 +286,8 @@ interface Milestone {
   title?: string;
   description?: string;
   deadline?: Date;
-  active: boolean
+  active: boolean;
+  delayed?: boolean;
   icon?: string;
 }
 
