@@ -81,7 +81,6 @@ export const milestones = [
     description: "We finish our project and present it to the public.",
     deadline: new Date('2024-03-19'),
     active: false,
-    delayed: true,
     icon: 'tabler:pennant',
   },
 ];
