@@ -71,7 +71,7 @@ export const milestones = [
   {
     title: "Integrated topic labelling",
     description: "We integrate a production-ready language model to label the extracted topics.",
-    deadline: new Date('2024-03-01'),
+    deadline: new Date('2024-03-13'),
     active: false,
     delayed: true,
     icon: 'tabler:tags',
@@ -79,7 +79,7 @@ export const milestones = [
   {
     title: "Finished project",
     description: "We finish our project and present it to the public.",
-    deadline: new Date('2024-04-02'),
+    deadline: new Date('2024-03-19'),
     active: false,
     icon: 'tabler:pennant',
   },
